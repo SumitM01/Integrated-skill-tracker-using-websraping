@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}|View Profile{% endblock %}
+
+{% block html_head %}
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
+
+
+{% block content %}
+  <video src={% static 'images/background_video.mp4'%} class="video-background" autoplay loop muted plays-inline></video>
+  <div class="content">
+    <div class="container">
+      <button style="margin-left: 45rem;" type="submit" class="btn btn-primary"><a style="color: #fff; text-decoration: none;" href="{% url 'edit-profile' %}">Edit Profile</a></button>
+
+      <div class="profile">
+        <img src="{{view_user.profile.image.url}}" alt="Profile Picture">
+
+        <div>
+          <h1>{{view_user.profile.fullname}}</h1>
+          <h4>@{{view_user.username}}</h4>
+          <h6>{{view_user.profile.institute}}</h6>
+        </div>
+      </div>
+
+      <h2>Skills</h2>
+      <div class="skills">
+        {% for skill in user_skills %}
+        <span class="skill">{{skill}}</span>
+        {% endfor%}
+      </div>
+      <div>
+        <h2>About Me</h2>
+        <p>{{view_user.profile.about}}</p>
+{% endblock %} 

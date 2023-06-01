@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+table {
+  width: 100%;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+table a {
+  color: white;
+}
+
+table,
+th,
+td {
+  border-collapse: collapse;
+  padding: 2rem;
+  text-align: center;
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.main {
+  width: 80%;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0.4rem 0.8rem #0005;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  height: fit-content;
+}
+
+.main__header {
+  width: 100%;
+  height: 8%;
+  background-color: #fff4;
+  padding: 0.9rem 1rem;
+}
+
+.main__body {
+  width: 95%;
+  background-color: #fffb;
+  margin: 0.9rem auto;
+  border-radius: 0.6rem;
+  overflow: auto;
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  left: 0;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+}
+table th:nth-child(n + 4),
+table td:nth-child(n + 4) {
+  display: none;
+}
+
+.cb {
+  cursor: pointer;
+}
+
+form {
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+}
+
+label {
+  margin-right: 1rem;
+}
+/* .white-wrapper {
+  margin-top: 3rem;
+  margin-left: 10rem;
+  margin-right: 10rem;
+  padding-top: 2rem;
+  height: auto;
+  padding-bottom: 2rem;
+  background-color: rgba(255, 255, 255, 0.5);
+} */
+select {
+  padding: 0.5rem;
+  margin-right: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+}
+
+#submit-btn {
+  padding: 0.5rem 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: black;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 2rem auto 0;
+  display: block;
+}
+
+#submit-btn:hover {
+  background-color: black;
+  color: white;
+}
+
+label,
+select,
+#submit-btn {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+label,
+select,
+#submit-btn {
+  margin-top: 1rem;
+}
+
+#submit-btn {
+  margin-top: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  form {
+    flex-direction: row;
+  }
+  label,
+  select {
+    margin-right: 1rem;
+    margin-top: 0;
+  }
+  #submit-btn {
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}| Contest{% endblock %}
+
+{% block html_head %}
+<link rel="stylesheet" href="{% static 'css/contest.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="white-wrapper">
+  <div class="buttons">
+    <button class="category-button" onclick="showCategory('ongoing', event)">Ongoing Contest</button>
+    <button class="category-button" onclick="showCategory('upcoming', event)">Upcoming Contest</button>
+    <button class="category-button" onclick="showCategory('long', event)">Long Contest</button>
+    <button class="category-button" onclick="showCategory('expired', event)">Expired Contest</button>
+  </div>
+<div class="contests" style="height: 500px; overflow: auto;">
+  <div class="container category" id="ongoing">
+    <table>
+      <tbody>
+        {% if not ongoing_contest %}
+            <tr><td>No Contest Available<td></tr>
+        {% for i in contest %}
+          {% if i.status == 'ongoing' %}
+            <tr>
+              <td><img src="{{i.platform.image.url}}" alt="Logo" class="logo"></td>
+              <td><b>{{i.platform}}</b><br><span>{{i.name}}</span></td>
+              <td><span>{{i.date}}<br>{{i.time}}</span></td>
+              <td><span>{{i.duration}}</span></td>
+              <td><a href="{{i.link}}">↗️</a></td>
+            </tr>
+          {% endif %}
+        {% endfor %}
+        {% endif %}
+      </tbody>      
+    </table> 
+  </div>
+  
+
+  <div class="container category" id="upcoming" style="display:none;">
+    <table>
+      <tbody>
+        {% for i in contest %}
+          {% if i.status == 'upcoming' %}
+            <tr>
+              <td><img src="{{i.platform.image.url}}" alt="Logo" class="logo"></td>
+              <td><b>{{i.platform}}</b><br><span>{{i.name}}</span></td>
+              <td><span>{{i.date}}<br>{{i.time}}</span></td>
+              <td><span>{{i.duration}}</span></td>
+              <td><a href="{{i.link}}">↗️</a></td>
+            </tr>
+          {% endif %}
+        {% endfor %}
+      </tbody>
+    </table> 
+  </div>
+
+  <div class="container category" id="long" style="display:none;">
+    <table>
+      <tbody>
+        {% for i in contest %}
+          {% if i.status == 'constant' %}
+            <tr>
+              <td><img src="{{i.platform.image.url}}" alt="Logo" class="logo"></td>
+              <td><b>{{i.platform}}</b><br><span>{{i.name}}</span></td>
+              <td><span>{{i.date}}<br>{{i.time}}</span></td>
+              <td><span>{{i.duration}}</span></td>
+              <td><a href="{{i.link}}">↗️</a></td>
+            </tr>
+          {% endif %}
+        {% endfor %}
+      </tbody>
+    </table> 
+  </div>
+
+  <div class="container category" id="expired" style="display:none;">
+    <table>
+      <tbody>
+        {% for i in contest %}
+          {% if i.status == 'expired' %}
+            <tr>
+              <td><img src="{{i.platform.image.url}}" alt="Logo" class="logo"></td>
+              <td><b>{{i.platform}}</b><br><span>{{i.name}}</span></td>
+              <td><span>{{i.date}}<br>{{i.time}}</span></td>
+              <td><span>{{i.duration}}</span></td>
+              <td><a href="{{i.link}}">↗️</a></td>
+            </tr>
+          {% endif %}
+        {% endfor %}
+      </tbody>
+    </table> 
+    </div>
+  </div>
+</div>
+    <script src="{% static 'js/contest.js' %}" type="text/javascript"></script>
+{% endblock %}

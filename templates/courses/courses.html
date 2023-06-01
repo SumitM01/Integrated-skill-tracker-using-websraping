@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}| Question{% endblock %}
+
+{% block html_head %}
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/courses.css' %}">
+{% endblock %}
+    
+{% block content %}
+<div class="white-wrapper">
+    <div class="content">
+    <div class="container">
+    <main class = "table">
+       
+        <section class="table__header"> 
+            <h1 style="text-align: center;">  Practice Questions 🖊️</h1>
+        </section>
+        <br>
+        <form action="" method="GET">
+            <label for="difficulty">Difficulty:</label> 
+                <select id="difficulty" name="difficulty">
+                    <option value="{{difficulty}}" selected disabled hidden>{{difficulty}}</option>
+                    <option id="d" value="All">All</option>
+                    <option id="d" value="Easy">Easy</option>
+                    <option id="d" value="Medium">Medium</option>
+                    <option id="d" value="Hard">Hard</option>
+                </select>
+            <label for="topic">Topic:</label>
+                <select id="topic" name="topic">
+                    <option value="{{topic}}" selected disabled hidden>{{topic}}</option>
+                    <option value="All">All</option>
+                    <option value="Array">Array</option>
+                    <option value="Matrix">Matrix</option>
+                    <option value="Searching & Sorting">Searching & Sorting</option>
+                    <option value="Linkedlist">Linkedlist</option>
+                    <option value="Binary tree">Binary Tree</option>
+                    <option value="Binary search tree">Binary Search Tree</option>
+                    <option value="Greedy">Greedy</option>
+                    <option value="Backtracking">Backtracking</option>
+                    <option value="Stack & queue">Stack & Queue</option>
+                    <option value="Heap">Heap</option>
+                    <option value="Graph">Graph</option>
+                    <option value="Dynamic Programming">Dynamic Programming</option>
+                    <option value="Bit Maniputation">Bit Maniputation</option>
+                    <option value="Trie">Trie</option>
+                </select>
+                <button id="submit-btn" type="submit">GO</button> 
+        </form>
+              
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                        <th> Problems ⚐ </th>
+                        <th> Links 🔗 </th>
+                        <th> Checklist ✅</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  {% for i in questions %}
+                    <tr data-pk="{{ i.question_no }}">
+                        {% if difficulty == 'All' or difficulty == i.question_difficulty %}
+                        {% if  topic == 'All' or topic == i.question_type %}
+                            <td> {{i.question_name}}</td>
+                            <td> <a href="{{i.question_link}}">Question Link</a></td>
+                            {% for user_question in user.usercodingquestion_set.all %}
+                                {% if user_question.question == i %}
+                                    <td><input type="checkbox" name="is_done" class="class_is_done" {% if user_question.is_done %}checked{% endif %}></td>
+                                {% endif %}
+                            {% endfor %}
+                            <td><input type="checkbox" name="is_done" class="class_is_done"></td>
+                            {% comment %} <td><input type="checkbox" name="is_done" class="class_is_done" {% for j in questions %}  {% if user_question.question != j and j == i %} style="display: none;"  {% endif %} {% endfor %}></td> {% endcomment %}
+                        {% endif %} 
+                        {% endif %} 
+                    </tr>
+                  {% endfor %}
+                </tbody>
+            </table>
+        </section>
+      
+        </main>
+    </div>
+</div>
+</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{% static 'js/courses.js' %}" type="text/javascript"></script>
+{% endblock %}

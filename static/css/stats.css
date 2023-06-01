@@ -1,0 +1,153 @@
+body {
+  background-image: url(../images/stats_bg.jpg);
+  background-size: 100% 100%;
+}
+
+nav {
+  display: flex;
+  padding: 2% 6%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  color: #ffffff;
+}
+
+.nav-links ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 40%;
+  border: 1px solid transparent;
+  box-shadow: 0 0 0 rgba(98, 98, 98, 0.1);
+  transition: all 0.1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.card {
+  /* old code
+    margin: 5rem 1rem 1rem 9.5rem; 
+     width: 80%;
+     padding: 5rem;*/
+  /* changes start */
+  margin: 1rem 4.5rem;
+  width: 1300px;
+  padding: 2.5rem;
+  scroll-margin: 1rem 6rem;
+  /* changes end */
+  border: 1px solid rgb(0, 0, 0);
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.pages {
+  align-items: center;
+  /* old code
+   margin: 4%; */
+}
+
+/* changes */
+.contestlist{
+  display: inline-flex;
+  overflow-x: scroll;
+  width: 100%;
+  list-style: none;
+  scroll-behavior: smooth;
+
+}
+
+.statlogos{
+  display: inline-flex;
+  width: 100%;
+}
+
+.statlogos a{
+  text-decoration: none;
+  display: inline-block;
+  justify-content: center;
+  margin:auto;
+  padding:0.5rem;
+  color: gold ;
+  background-color: darkblue;
+  font-size: 1rem;
+  border: 1px solid transparent;
+  border-radius: 20%;
+}
+
+.statlogos a:hover{
+  text-decoration: none;
+  display: inline-block;
+  justify-content: center;
+  margin:auto;
+  padding:0.5rem;
+  color: darkblue ;
+  background-color: gold;
+  font-size: 1rem;
+  border: 1px solid transparent;
+  border-radius: 20%;
+}
+/* end */
+
+/* .logo {
+  display: block;
+  margin: 2rem;
+  width: 50%;
+} */
+
+.parent {
+  text-align: center;
+}
+
+.subcard {
+  display: inline-block;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 5px;
+  width: 350px;
+  font-size: 1.5rem;
+  vertical-align: top;
+  justify-content: center;
+}
+
+.container h4 {
+  color: black;
+}
+
+.subcard h5 {
+  font-weight: bold;
+}
+
+.subcard p {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.visit-button {
+  display: block;
+  margin: 20px auto 0;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.logo {
+  display: block;
+  margin: auto;
+  width: 6%;
+}
+
+.visit-button:hover {
+  color: black;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/*Scrollbar*/
+
+/* Set the width and height of the scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+  display: none;
+}

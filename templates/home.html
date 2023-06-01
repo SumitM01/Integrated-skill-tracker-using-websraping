@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}| Home{% endblock%}
+
+{% block html_head %}
+<!-- Add any custom head elements here -->
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}" />
+
+<h1 class="pop-element" style="text-align: center;"> Welcome! {{user.username}} :) </h1>
+
+<!-- Add some introductory text to the page -->
+<!-- <p class="intro-text">Welcome to our platform! We offer a wide variety of coding challenges and contests to help you
+    improve your coding skills and have fun at the same time. Here are some details about your progress so far:</p> -->
+
+<div class="white-wrapper">
+    <div class="container">
+        <div class="row g-0">
+            <div class="column">
+                {% for i in leaderboard %}
+                {% if i.user == user %}
+                <h2>Rank</h2>
+                <h1>{{forloop.counter}}</h1>
+                {% endif %}
+                {% endfor %}
+            </div>
+            <div class="column">
+                <h2>Score</h2>
+                <h1>{{user.leaderboard.ic_score}}</h1>
+            </div>
+            <div class="column">
+                <h2>Prblms Slvd</h2>
+                <h1>{{user.leaderboard.total_problem_solved}}</h1>
+            </div>
+            <div class="column">
+                <h2>Contst Atmpt</h2>
+                <h1>{{user.leaderboard.total_contest_attempted}}</h1>
+            </div>
+        </div>
+        <div class="right-contest-card">
+            <h2>Ongoing Contest</h2>
+            {% if not contest %}
+            ,<div class ="box"><h3>No Contest Available</h3></div>
+            {%else%}
+            {% for i in contest %}
+            <div class="box">
+                <h3>{{i.name}}</h3>
+                <div class="event-details">
+                    Date: <span class="date">{{i.date}}</span>
+                    <br>
+                    Start Time: <span class="start-time">{{i.time}}</span>
+                    <br>
+                    Duration: <span class="duration">{{i.duration}}</span>
+                    <br>
+                    Ends in: <span class="countdown"></span><br>
+                </div>
+                <div class="participate-link">
+                    <a href="">Participate</a>
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+        <div class="left-contest-card">
+            <h2>Total questions Solved : <span>{{solved}} of {{question}}</span></h2>
+            <!-- {{for }} -->
+            <h3>Array : {{solved}} of {{question}}</h3>
+            <!-- {{ endfor }} -->
+        </div>
+    </div>
+</div>
+
+<!-- Add some closing text to the page -->
+<!-- <p class="closing-text">Keep up the great work and happy coding!</p> -->
+
+<script src="{% static 'js/home.js' %}" type="text/javascript"></script>
+{% endblock %}

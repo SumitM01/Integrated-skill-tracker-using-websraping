@@ -1,0 +1,101 @@
+
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.profile img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.profile h1 {
+  margin: 0;
+  font-size: 36px;
+  color: #333;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.skill {
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 25px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.about {
+  line-height: 1.5;
+  color: #444;
+}
+
+.btn {
+  background-color: rgb(41, 41, 41);
+}
+
+p {
+  font-size: 1rem;
+}
+
+.personal-details table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.personal-details th {
+  background-color: #f9f9f9;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.personal-details td {
+  padding: 0.5rem;
+}
+
+.personal-details tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.personal-details tr:hover {
+  background-color: #eaeaea;
+}
+
+.platform-details {
+  padding: 10px;
+}
+
+/* Edit the content div */
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:0rem 10rem 0rem 10rem;
+  background-color: white;
+  color: #fff;
+  opacity: 1;
+  background-clip: border-box;
+  border-radius: 20px;
+}
+
+.content > .container {
+  background-color: white;
+  color: black;
+  margin: 0px 0px;
+}

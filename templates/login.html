@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}| Login{% endblock %}
+
+{% block html_head %}
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+{% endblock %}
+    
+{% block content %}
+<!-- <div class="container">
+    <form method="post">
+      <div class="form-group">
+            {% csrf_token %}
+          {%load crispy_forms_tags%}
+          {{ form|crispy }}
+      </div>
+      <button type="submit" class="sign-in">Sign in</button>
+      <div class="forget-password">Forgot Password?  <a href="{% url 'reset_password' %}">Click here!</a></div>
+    </form>
+</div> -->
+
+    <div class="form-container">
+      <div class="form-header">
+        <h1>Welcome Back!</h1>
+        <p>Please log in to your account</p>
+      </div>
+      <form class="form" action="" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+          {% csrf_token %}
+          {%load crispy_forms_tags%}
+          {{ form|crispy }}
+        </div>
+        {% comment %} <div class="form-group">
+          <input type="name" name="username" placeholder="Username" required>
+        </div>
+        <div class="form-group">
+          <input type="password" name="password" placeholder="Password" required>
+        </div>{% endcomment %}
+        <div class="form-group">
+          <button type="submit">Log in</button>
+        </div> 
+      </form>
+      <div class="form-footer">
+        <p>Don't have an account yet? <a href="{% url 'register-page' %}">Register here</a></p>
+      </div>
+      <div class="form-footer">
+        <p>Forgot Password? <a href="{% url 'reset_password' %}">Click Here!</a></p>
+      </div>
+    </div>
+
+
+{% endblock %} 

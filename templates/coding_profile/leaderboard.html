@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}| leaderboard{% endblock %}
+
+{% block html_head %}
+<link rel="stylesheet" href="{% static 'css/leaderboard.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container h-80">
+	<div class="row d-flex justify-content-center align-items-center">
+		<div class="white-wrapper">
+			<div class="heading">
+				<div>
+					<h1><img style="width: 50px; height:50px;" src="{% static 'images/leaderboard.png' %}"> Leaderboard </h1>
+				</div>
+				{% if institute == 'Global' %}
+				<div class="institute-name" id="institute-name">
+					<span>{{user.profile.institute}}</span>
+				</div>
+				{%else%}
+				<div class="institute-name" id="institute-name">
+					<span>Global</span>
+				</div>
+				{% endif %}
+			</div>
+			<div style="height: 550px; overflow: auto;">
+			<table id="ranking-table" >
+				<thead>
+					<tr>
+						<th>Rank{% if institute == user.profile.institute %}(Global Rank){% endif %}</th>
+						<th></th>
+						<th>Name</th>
+						<th>Problems Solved</th>
+						<th>Contests Attended</th>
+						<th>IC Score</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for i in leaderboard %}
+					{% if i.user.profile.institute == institute or institute == 'Global' %}
+					<tr>
+						
+						<td><span class="rank"></span>{% if institute == user.profile.institute %}({{ forloop.counter }}){% endif %}</td>
+						<td><img class="photo" src="{{ i.user.profile.image.url }}"></td>
+						<td><a href="{% url 'view-profile' username=i.user.username %}">{{i.user.username}}</a></td>
+						<td>{{i.total_problem_solved}}</td>
+						<td>{{i.total_contest_attempted}}</td>
+						<td>{{i.ic_score}}</td>
+						
+					</tr>
+					{%endif%}
+					{%endfor%}
+				</tbody>
+			</table>
+		</div>
+			<form id="institute-form" method="post" action="">
+				{% csrf_token %}
+				<input type="hidden" name="institute-name" id="institute-name-input">
+			</form>
+		</div>
+	</div>
+</div>
+	<script>
+		// Generate the rank numbers
+		const rows = document.querySelectorAll('#ranking-table tbody tr');
+		for (let i = 0; i < rows.length; i++) {
+			const rankCell = rows[i].querySelector('.rank');
+			rankCell.textContent = i + 1 ;
+			console.log(rankCell);
+			if(rankCell.textContent == 1)
+			{
+				rankCell.style.backgroundImage = 'url("../../static/images/rank1.png")';
+				rankCell.style.backgroundSize = 'cover';
+				rankCell.style.padding= '20px';
+				rankCell.style.margin='20px';
+				rankCell.style.color='transparent';
+			}
+			else if(rankCell.textContent == 2)
+			{
+				rankCell.style.backgroundImage = 'url("../../static/images/rank2.png")';
+				rankCell.style.backgroundSize = 'cover';
+				rankCell.style.padding='20px';
+				rankCell.style.margin='20px';
+				rankCell.style.color='transparent';
+			}
+			else if(rankCell.textContent == 3)
+			{
+				rankCell.style.backgroundImage = 'url("../../static/images/rank3.png")';
+				rankCell.style.backgroundSize = 'cover';
+				rankCell.style.padding= '20px';
+				rankCell.style.margin='20px';
+				rankCell.style.color='transparent';
+			}
+			
+		}
+		// Add click event listener to institute name
+		const instituteName = document.getElementById('institute-name');
+			instituteName.addEventListener('click', () => {
+			const instituteNameInput = document.getElementById('institute-name-input');
+			instituteNameInput.value = instituteName.textContent.trim();
+			document.getElementById('institute-form').submit();
+		});
+	</script>
+
+{% endblock %} 

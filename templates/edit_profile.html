@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}| edit-profile{% endblock %}
+
+{% block html_head %}
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<link rel="stylesheet" href="{% static 'css/form.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+          <div class="form-group">
+              {%load crispy_forms_tags%}
+              {{ form|crispy }}
+          </div>
+          <button type="submit" class="btn btn-primary">Edit</button>
+        </form>
+    </div>
+{% endblock %} 

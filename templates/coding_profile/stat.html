@@ -1,0 +1,191 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}| Report{% endblock %}
+
+{% block html_head %}
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/stats.css' %}">
+{% endblock %}
+    
+{% block content %}
+<div class="pages">
+  <div class="statlogos">
+    <a href="#hackerrank" type="button">Hackerrank</a>
+    <a href="#codechef" type="button">Codechef</a>
+    <a href="#leetcode" type="button">Leetcode</a>
+    <a href="#codeforces" type="button">Codeforces</a>
+    <a href="#spoj" type="button">Spoj</a>
+  </div>
+  <ul class="contestlist">
+    <li> <div class="card" id="hackerrank">
+      <img class="logo" src="{% static 'images/hackerranklogo.jpg' %}" alt="Logo">
+      <center>
+      <div class="parent">
+        <h4><b>Hackerrank</b></h4> 
+        <div class="subcard">
+          <h5>Rank</h5>
+          <p>1</p>
+        </div>
+        <div class="subcard">
+          <h5>Problems Solved</h5>
+          <p>5678</p>
+        </div>
+        <div class="subcard">
+          <h5>Contests Attempted</h5>
+          <p>91011</p>
+        </div>
+        <div class="subcard">
+          <h5>Contest Rating</h5>
+          <p>121314</p>
+        </div>
+        <div class="subcard">
+          <h5>Score</h5>
+          <p>151617</p>
+        </div>
+        <div class="subcard">
+          <a href="www.hackerrank.com" class="visit-button">Visit Website</a> 
+        </div>
+        
+      </div>
+      </center>
+    </div></li>
+
+    <li><div class="card" id="codechef">
+      <img class='logo' src="{% static 'images/codecheflogo.jpg' %}" alt="Logo" >
+      <center>
+      <div class="parent">
+        <h4><b>Codechef</b></h4> 
+        <div class="subcard">
+          <h5>Rank</h5>
+          <p>{{user.codechefdetails.rank}}</p>
+        </div>
+        <div class="subcard">
+          <h5>Problems Solved</h5>
+          <p>{{user.codechefdetails.no_of_problem_solved}}</p>
+        </div>
+        <div class="subcard">
+          <h5>Contests Attempted</h5>
+          <p>{{user.codechefdetails.no_of_contest_attempted}}</p>
+        </div>
+        <div class="subcard">
+          <h5>Contest Rating</h5>
+          <p>{{user.codechefdetails.contest_rating}}</p>
+        </div>
+        <div class="subcard">
+          <h5>Score</h5>
+          <p>{{user.codechefdetails.score}}</p>
+        </div>
+        <div class="subcard">
+          <a href="www.codechef.com" class="visit-button">Visit Website</a>
+        </div>
+        
+      </div>
+      </center>
+    </div>
+  </li>
+
+    <li><div class="card" id="leetcode">
+      <img class='logo' src="{% static 'images/leetcodelogo.png' %}" alt="Logo">
+      <center>
+      <div class="parent">
+        <h4><b>Leetcode</b></h4> 
+        <div class="subcard">
+          <h5>Rank</h5>
+          <p>{{user.leetcodedetails.rank}}</p>
+        </div>
+        <div class="subcard">
+          <h5>Problems Solved</h5>
+          <p>{{user.leetcodedetails.no_of_problem_solved}}</p>
+        </div>
+        <div class="subcard">
+          <h5>Contests Attempted</h5>
+          <p>{{user.leetcodedetails.no_of_contest_attempted}}</p>
+        </div>
+        <div class="subcard">
+          <h5>Contest Rating</h5>
+          <p>{{user.leetcodedetails.contest_rating}}</p>
+        </div>
+        <div class="subcard">
+          <h5>Score</h5>
+          <p>{{user.leetcodedetails.score}}</p>
+        </div>
+        <div class="subcard">
+          <a href="www.leetcode.com" class="visit-button">Visit Website</a>
+        </div>
+        
+      </div>
+      </center>
+    </div></li>
+
+    <li><div class="card" id="codeforces">
+      <img class='logo' src="{% static 'images/codeforceslogo.png' %}" alt="Logo" >
+      <center>
+      <div class="parent">
+        <h4><b>Codeforces</b></h4> 
+        <div class="subcard">
+          <h5>Rank</h5>
+          <p>{{user.codeforcesdetails.rank}}</p>
+        </div>
+        <div class="subcard">
+          <h5>Problems Solved</h5>
+          <p>{{user.codeforcesdetails.no_of_problem_solved}}</p>
+        </div>
+        <div class="subcard">
+          <h5>Contests Attempted</h5>
+          <p>{{user.codeforcesdetails.no_of_contest_attempted}}</p>
+        </div>
+        <div class="subcard">
+          <h5>Contest Rating</h5>
+          <p>{{user.codeforcesdetails.contest_rating}}</p>
+        </div>
+        <div class="subcard">
+          <h5>IC Score</h5>
+          <p>{{user.codeforcesdetails.score}}</p>
+        </div>
+        <div class="subcard">
+          <a href="www.codeforces.com" class="visit-button">Visit Website</a>
+        </div>
+        
+      </div>
+      </center>
+    </div>
+  </li>
+
+    <li><div class="card" id="spoj">
+      <img class='logo' src="{% static 'images/spojlogo.jpeg' %}" alt="Logo" >
+      <center>
+      <div class="parent">
+        <h4><b>Spoj</b></h4> 
+        <div class="subcard">
+          <h5>Rank</h5>
+          <p>{{user.spojdetails.rank}}</p>
+        </div>
+        <div class="subcard">
+          <h5>Problems Solved</h5>
+          <p>{{user.spojdetails.no_of_problem_solved}}</p>
+        </div>
+        <div class="subcard">
+          <h5>Contests Attempted</h5>
+          <p>{{user.spojdetails.no_of_contest_attempted}}</p>
+        </div>
+        <div class="subcard">
+          <h5>Contest Rating</h5>
+          <p>{{user.spojdetails.contest_rating}}</p>
+        </div>
+        <div class="subcard">
+          <h5>Score</h5>
+          <p>{{user.spojdetails.score}}</p>
+        </div>
+        <div class="subcard">
+          <a href="www.spoj.com" class="visit-button">Visit Website</a>
+        </div>
+        
+      </div>
+      </center>
+    </div></li>
+  </ul>
+</div>
+
+{% endblock %} 

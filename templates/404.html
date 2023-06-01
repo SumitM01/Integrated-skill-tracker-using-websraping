@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}| Home{% endblock%}
+
+{% block html_head %}
+<!-- Add any custom head elements here -->
+{% endblock %}
+
+{% block content %}
+
+
+
+<style>
+    body {
+        background-color: #f2f2f2;
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        margin: 0 auto;
+        max-width: 800px;
+        padding: 40px;
+        text-align: center;
+    }
+
+    h1 {
+        color: #333;
+        font-size: 48px;
+        margin-bottom: 20px;
+    }
+
+    p {
+        color: #666;
+        font-size: 24px;
+        margin-bottom: 40px;
+    }
+
+    a {
+        color: #000000;
+        background-color: transparent;
+        border-radius: 4px;
+        display: inline-block;
+        font-size: 18px;
+        padding: 10px 20px;
+        text-decoration: none;
+    }
+
+    a:hover {
+        background-color: #0069d9;
+        color: white;
+    }
+</style>
+<div class="container">
+    <h1>Oops!</h1>
+    <p>Something went wrong. Please try again later.</p>
+    <a href="/">Go back to the homepage</a>
+</div>
+
+
+
+{% endblock %}
