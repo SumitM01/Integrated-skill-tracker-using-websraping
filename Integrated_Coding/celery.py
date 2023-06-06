@@ -86,7 +86,7 @@ app.conf.beat_schedule = {
             'priority': map_priority(10) # Map priority value of 10 to Celery priority range
         }
     },
-    'task-7' : {
+    'task-8' : {
         'task': 'coding.tasks.update_leaderboard',
         'schedule': 200.0, # every hour
         'args': (),
@@ -94,7 +94,16 @@ app.conf.beat_schedule = {
             'queue': 'low_priority',
             'priority': map_priority(1) # Map priority value of 10 to Celery priority range
         }
-    }
+    },
+    'task-9': {
+        'task': 'contest.tasks.scrape_codeforces_contest',
+        'schedule': 200.0, # every hour
+        'args': (),
+        'options': {
+            'queue': 'high_priority',
+            'priority': map_priority(10) # Map priority value of 10 to Celery priority range
+        }
+    },
 }
 
 app.autodiscover_tasks()
