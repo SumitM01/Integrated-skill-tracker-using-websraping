@@ -1,5 +1,5 @@
 # Integrated Skill Tracker using Web Scraping
-Hi this is IRD! aka Serpant!
+Hi this is IRDi! aka Serpant!
 This project is an Integrated Skill Tracker web application that scrapes job listing websites to track the skills that are currently in demand in the job market. The application uses Django as the web framework, Selenium for web scraping, and Celery for task scheduling. This application serves as a central hub for various skill practicing websites, including HackerRank, Codechef, etc. Users can access these websites through a single platform, making it easier to track progress and improve skills...
 
 ## Prerequisites
