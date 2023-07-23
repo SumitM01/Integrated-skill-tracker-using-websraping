@@ -75,5 +75,3 @@ This project is licensed under the MIT License. see the
 ## Acknowledgements
 
 This project was built as a part of a university assignment. Special thanks to our professor for giving us the opportunity to work on this project and learn new technologies.
-Hello
-
