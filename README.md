@@ -63,7 +63,11 @@ Access the web application at `http://localhost:8000/`
 - We've also implemented practice problems with links to external sites to give an idea of where to start DSA.
 
 ## Screenshots
-https://github.com/SumitM01/Integrated-skill-tracker-using-websraping/blob/main/Screenshots/dashborad%20image.png
+![Dashboard Screenshot](https://github.com/SumitM01/Integrated-skill-tracker-using-websraping/blob/main/Screenshots/dashborad%20image.png)
+![Contests Screenshot](https://github.com/SumitM01/Integrated-skill-tracker-using-websraping/blob/main/Screenshots/dashborad%20image.png)
+![Leaderboard Screenshot](https://github.com/SumitM01/Integrated-skill-tracker-using-websraping/blob/main/Screenshots/dashborad%20image.png)
+![Stats Screenshot](https://github.com/SumitM01/Integrated-skill-tracker-using-websraping/blob/main/Screenshots/dashborad%20image.png)
+![User Profile Screenshot](https://github.com/SumitM01/Integrated-skill-tracker-using-websraping/blob/main/Screenshots/dashborad%20image.png)
 
 ## License
 
