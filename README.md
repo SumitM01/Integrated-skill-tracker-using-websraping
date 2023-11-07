@@ -63,11 +63,14 @@ Access the web application at `http://localhost:8000/`
 - We've also implemented practice problems with links to external sites to give an idea of where to start DSA.
 
 ## Screenshots
-![Dashboard Screenshot](https://github.com/SumitM01/Integrated-skill-tracker-using-websraping/blob/main/Screenshots/dashborad%20image.png)
-![Contests Screenshot](https://github.com/SumitM01/Integrated-skill-tracker-using-websraping/blob/main/Screenshots/dashborad%20image.png)
-![Leaderboard Screenshot](https://github.com/SumitM01/Integrated-skill-tracker-using-websraping/blob/main/Screenshots/dashborad%20image.png)
-![Stats Screenshot](https://github.com/SumitM01/Integrated-skill-tracker-using-websraping/blob/main/Screenshots/dashborad%20image.png)
-![User Profile Screenshot](https://github.com/SumitM01/Integrated-skill-tracker-using-websraping/blob/main/Screenshots/dashborad%20image.png)
+
+![profile image](https://github.com/SumitM01/Integrated-skill-tracker-using-websraping/assets/65524561/3367f29c-a5c6-4563-a113-3877473a7a4b)
+![dashborad image](https://github.com/SumitM01/Integrated-skill-tracker-using-websraping/assets/65524561/4fbea5d2-e55b-474d-9123-353c93cd927f)
+![contest image](https://github.com/SumitM01/Integrated-skill-tracker-using-websraping/assets/65524561/69fafb3f-b14b-4f9b-9175-b2044aaad019)
+![leaderboard image](https://github.com/SumitM01/Integrated-skill-tracker-using-websraping/assets/65524561/260c811b-a592-4ee1-8da8-bda4c07b9eee)
+![report Image](https://github.com/SumitM01/Integrated-skill-tracker-using-websraping/assets/65524561/abb6c14f-a7a6-433a-9f7f-97018229b152)
+![problem image](https://github.com/SumitM01/Integrated-skill-tracker-using-websraping/assets/65524561/d86115ef-eee7-4d4f-aa6d-cdbd029f64a8)
+
 
 ## License
 
