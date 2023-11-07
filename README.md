@@ -56,15 +56,14 @@ Access the web application at `http://localhost:8000/`
 
 ## Usage/Examples
 
-Create a new skill to track by clicking the "New Skill" button on the home page.
+- Create an account and add you desired coding platform profiles to track.
+- Save the details in the user page and you are done.
+- The scraping process is run asynchronously using Celery, so the user can continue using the application while the scraping is ongoing.
+- Once the scraping is complete, the user can view the Stats for each platform, Leaderboard position, and ongoing contests on the homepage and contests page.
+- We've also implemented practice problems with links to external sites to give an idea of where to start DSA.
 
-Enter the skill name and select the job listing websites to scrape for job postings related to that skill.
+## Screenshots
 
-Click "Save" to create the new skill and start the scraping process.
-
-The scraping process is run asynchronously using Celery, so the user can continue using the application while the scraping is ongoing.
-
-Once the scraping is complete, the user can view the list of job postings related to the skill by clicking the skill name on the home page.
 
 ## License
 
