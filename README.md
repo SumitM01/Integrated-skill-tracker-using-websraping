@@ -71,7 +71,6 @@ Access the web application at `http://localhost:8000/`
 ![report Image](https://github.com/SumitM01/Integrated-skill-tracker-using-websraping/assets/65524561/abb6c14f-a7a6-433a-9f7f-97018229b152)
 ![problem image](https://github.com/SumitM01/Integrated-skill-tracker-using-websraping/assets/65524561/d86115ef-eee7-4d4f-aa6d-cdbd029f64a8)
 
-
 ## License
 
 This project is licensed under the MIT License. see the
