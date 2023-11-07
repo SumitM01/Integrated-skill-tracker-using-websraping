@@ -56,14 +56,14 @@ Access the web application at `http://localhost:8000/`
 
 ## Usage/Examples
 
-- Create an account and add you desired coding platform profiles to track.
+- Create an account and add your desired coding platform profiles to track.
 - Save the details in the user page and you are done.
 - The scraping process is run asynchronously using Celery, so the user can continue using the application while the scraping is ongoing.
 - Once the scraping is complete, the user can view the Stats for each platform, Leaderboard position, and ongoing contests on the homepage and contests page.
 - We've also implemented practice problems with links to external sites to give an idea of where to start DSA.
 
 ## Screenshots
-
+https://github.com/SumitM01/Integrated-skill-tracker-using-websraping/blob/main/Screenshots/dashborad%20image.png
 
 ## License
 
